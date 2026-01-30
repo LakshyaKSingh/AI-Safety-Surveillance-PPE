@@ -2,7 +2,7 @@ import cv2
 from detector import PersonDetector
 from violation import ViolationTracker
 
-video_path = "../data/videos/input.mp4"
+video_path = "E:/Codes/Ignite/data/videos/input.mp4"
 
 cap = cv2.VideoCapture(video_path)
 if not cap.isOpened():
@@ -29,7 +29,7 @@ while cap.isOpened():
             # simulate missing PPE for now
             duration = violations.update(int(track_id), missing_ppe=True)
 
-            color = (0, 0, 255) if duration > 5 else (0, 255, 0)
+            color = (0, 0, 255) if duration > 3 else (0, 255, 0)
 
             cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
             cv2.putText(
