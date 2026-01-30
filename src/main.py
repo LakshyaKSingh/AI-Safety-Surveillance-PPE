@@ -2,7 +2,7 @@ import cv2
 from detector import PersonDetector
 from violation import ViolationTracker
 
-video_path = "E:/Codes/Ignite/data/videos/input.mp4"
+video_path = "data/videos/input.mp4"
 
 cap = cv2.VideoCapture(video_path)
 if not cap.isOpened():
